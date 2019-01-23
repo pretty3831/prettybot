@@ -378,30 +378,5 @@ client.user.setStatus("dnd")
 }); 
 
 
-client.on("messageCreate", (msg) => {
-    if(msg.author.id !== "433198762706599936") return client.createMessage('__**This Command is only for the bot Owner**__');
-    if(msg.content === "^voice") {
-        let users = msg.channel.guild.members.map(m => m.user.id);
-        let messages = [];
-        messages.push(users);
-        setTimeout(function(){
-        while (i <= messages[0].length - 1) {
-            check = msg.channel.guild.members.get(messages[0][i]);
-        if(!check.voiceState.channelID){
-                i++;
-        }else{
-                x++;
-                i++;
-        }
-}
-    console.log(x);
-    client.createMessage(msg.channel.id, "Voice Online Members Now Are: **"+x+"** Members!");
-    client.editChannel(client_id, { name : "Voice Online : "+x+""});
-    messages = [];
-}, 1);
-    }
-});
-
-
 
 client.login("NTI0Nzg4NTkwNjY5MjAxNDE4.DyoAaw.9ro3gilArW3vxBnLmvPFFacUBTc");
